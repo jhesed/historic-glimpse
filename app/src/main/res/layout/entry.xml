@@ -1,0 +1,245 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|fill_vertical">
+
+        <!-- WORLD HISTORY TITLE -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextBackground"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:layout_weight=".20">
+
+                <!--TITLES-->
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp">
+
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="86dp"
+                        android:id="@+id/ic_world_history"
+                        android:src="@mipmap/ic_note" />
+
+                </LinearLayout>
+
+                <!--DYNAMIC VALUES-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:layout_weight=".8"
+                    android:layout_marginLeft="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTextBackground"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="World History"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:paddingBottom="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="On the Abolition of Slavery in Britain"
+                            android:textColor="@color/colorTextEmphasis"
+                            android:id="@+id/content"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--DIVIDER-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- WORLD HISTORY CONTENT -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextBackground"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:layout_weight=".20">
+
+                <!--DYNAMIC VALUES-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:layout_weight=".80"
+                    android:layout_marginLeft="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTextBackground"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In 1833, Britain abolished slavery after 400 years.
+    The Act passed by Parliament frees all slaves in the nation’s territories after 5-7 years apprenticeship. $37 million had been saved to compensate slave owners.
+    It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807.
+    "
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorTextEmphasis"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--DIVIDER-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- PRAYER FOCUS -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextBackground"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:layout_weight=".20">
+
+                <!--TITLES-->
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp">
+
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="86dp"
+                        android:id="@+id/ic_world_focus_prayer_focus"
+                        android:src="@mipmap/ic_pray" />
+
+                </LinearLayout>
+
+                <!--DYNAMIC VALUES-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:layout_weight=".8"
+                    android:layout_marginLeft="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTextBackground"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Prayer Focus"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimary"
+                            android:paddingBottom="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="May any form of slavery anywhere in the world be finally obliterated. May human rights be totally safeguarded. May human rights groups be recognized and supported"
+                            android:textColor="@color/colorTextEmphasis"
+                            android:id="@+id/content_prayer_focus"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- SHARE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:background="@color/colorBackground"
+                android:textColor="@color/colorTextBackground"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/dialogOk"
+                android:padding="10dp"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

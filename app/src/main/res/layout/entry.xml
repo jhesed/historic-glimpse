@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorTextBackground"
                 android:gravity="center"
-                android:layout_weight=".20">
+                android:layout_weight=".10">
 
                 <!--TITLES-->
 
@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorTextBackground"
                     android:gravity="center"
-                    android:layout_marginLeft="20dp">
+                    android:layout_marginLeft="10dp">
 
 
                     <ImageView
@@ -53,8 +53,93 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/colorTextBackground"
-                    android:layout_weight=".8"
-                    android:layout_marginLeft="20dp">
+                    android:layout_weight=".9"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTextBackground"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"
+                            android:text="World History"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="On the Abolition of Slavery in Britain"
+                            android:textColor="@color/colorTextEmphasis"
+                            android:id="@+id/content"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--DIVIDER-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- HIGHLIGHTED VERSE -->
+
+        <!-- PRAYER FOCUS -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextBackground"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:layout_weight=".10">
+
+                <!--TITLES-->
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp">
+
+
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:layout_height="86dp"
+                        android:id="@+id/ic_highlighted_verse"
+                        android:src="@mipmap/ic_bible" />
+
+                </LinearLayout>
+
+                <!--DYNAMIC VALUES-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:layout_weight=".9"
+                    android:layout_marginLeft="10dp">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -66,7 +151,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="World History"
+                            android:text="Bible Verse"
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@color/colorPrimary"
                             android:paddingBottom="10dp"/>
@@ -75,9 +160,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="On the Abolition of Slavery in Britain"
+                            android:text="To the Jews who had believed him, Jesus said, 'If you hold to my teaching, you are really my disciples. 32 Then you will know the truth, and the truth will set you free.' John 8:31-32"
                             android:textColor="@color/colorTextEmphasis"
-                            android:id="@+id/content"/>
+                            android:textStyle="italic"
+                            android:id="@+id/content_bible_verse"/>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -107,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorTextBackground"
                 android:gravity="center"
-                android:layout_weight=".20">
+                android:layout_weight=".10">
 
                 <!--DYNAMIC VALUES-->
 
@@ -116,7 +202,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/colorTextBackground"
-                    android:layout_weight=".80"
+                    android:layout_weight=".90"
                     android:layout_marginLeft="20dp">
 
                     <LinearLayout
@@ -131,8 +217,7 @@
                             android:layout_height="wrap_content"
                             android:text="In 1833, Britain abolished slavery after 400 years.
     The Act passed by Parliament frees all slaves in the nation’s territories after 5-7 years apprenticeship. $37 million had been saved to compensate slave owners.
-    It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807.
-    "
+    It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807."
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@color/colorTextEmphasis"/>
 
@@ -164,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorTextBackground"
                 android:gravity="center"
-                android:layout_weight=".20">
+                android:layout_weight=".10">
 
                 <!--TITLES-->
 
@@ -174,7 +259,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorTextBackground"
                     android:gravity="center"
-                    android:layout_marginLeft="20dp">
+                    android:layout_marginLeft="10dp">
 
 
                     <ImageView
@@ -192,8 +277,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/colorTextBackground"
-                    android:layout_weight=".8"
-                    android:layout_marginLeft="20dp">
+                    android:layout_weight=".9"
+                    android:layout_marginLeft="10dp">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -222,6 +307,69 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <!-- DOTTED DIVIDER -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/dotted"
+            android:layerType="software" />
+
+        <!-- QUOTATION -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTextBackground"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:layout_weight=".10">
+
+                <!--DYNAMIC VALUES-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTextBackground"
+                    android:layout_weight=".90"
+                    android:layout_marginLeft="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTextBackground"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jesus is the Supreme Liberator of slaves."
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="italic"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- DOTTED DIVIDER -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/dotted"
+            android:layerType="software" />
 
         <!-- SHARE -->
         <LinearLayout

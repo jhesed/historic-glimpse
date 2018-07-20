@@ -39,8 +39,8 @@
 
 
                     <ImageView
-                        android:layout_width="54dp"
-                        android:layout_height="86dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:id="@+id/ic_world_history"
                         android:src="@mipmap/ic_note" />
 
@@ -124,8 +124,8 @@
 
 
                     <ImageView
-                        android:layout_width="54dp"
-                        android:layout_height="86dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:id="@+id/ic_highlighted_verse"
                         android:src="@mipmap/ic_bible" />
 
@@ -263,8 +263,8 @@
 
 
                     <ImageView
-                        android:layout_width="54dp"
-                        android:layout_height="86dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:id="@+id/ic_world_focus_prayer_focus"
                         android:src="@mipmap/ic_pray" />
 

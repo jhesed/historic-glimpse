@@ -1,7 +1,5 @@
 package com.historicalglimpse.jhesed.historicalglimpse;
 
-import com.historicalglimpse.jhesed.historicalglimpse.pojo.MultipleResource;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -23,7 +21,8 @@ class APIClient {
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://reqres.in")
+                // TODO: Replace with corresponding url
+                .baseUrl("http://192.168.1.8")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

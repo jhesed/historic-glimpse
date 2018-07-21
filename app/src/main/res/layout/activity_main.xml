@@ -39,11 +39,26 @@
             <!-- SECTION :: WORLD HISTORY -->
             <!-- ............................................................................... -->
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <!-- ............................................................................... -->
+            <!-- SECTION :: WORLD HISTORY -->
+            <!-- ............................................................................... -->
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|fill_vertical">
+                android:gravity="center_vertical|fill_vertical"
+                android:id="@+id/container_wh">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -126,7 +141,7 @@
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="On the Abolition of Slavery in Britain"
                                     android:textColor="@color/colorTextEmphasis"
-                                    android:id="@+id/content"/>
+                                    android:id="@+id/title_wh"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -211,7 +226,7 @@
                                     android:text="To the Jews who had believed him, Jesus said, 'If you hold to my teaching, you are really my disciples. 32 Then you will know the truth, and the truth will set you free.' John 8:31-32"
                                     android:textColor="@color/colorTextEmphasis"
                                     android:textStyle="italic"
-                                    android:id="@+id/content_bible_verse"/>
+                                    android:id="@+id/featured_verse_wh"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -261,7 +276,7 @@
                                 android:weightSum="1">
 
                                 <TextView
-                                    android:id="@+id/textView"
+                                    android:id="@+id/content_wh"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="In 1833, Britain abolished slavery after 400 years.
@@ -350,7 +365,7 @@
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="May any form of slavery anywhere in the world be finally obliterated. May human rights be totally safeguarded. May human rights groups be recognized and supported"
                                     android:textColor="@color/colorTextEmphasis"
-                                    android:id="@+id/content_prayer_focus"/>
+                                    android:id="@+id/prayer_focus_wh"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -405,7 +420,8 @@
                                     android:text="Jesus is the Supreme Liberator of slaves."
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:textColor="@color/colorPrimaryDark"
-                                    android:textStyle="italic"/>
+                                    android:textStyle="italic"
+                                    android:id="@+id/featured_quote_wh"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -429,7 +445,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|fill_vertical">
+                android:gravity="center_vertical|fill_vertical"
+                android:id="@+id/container_ph">
 
                 <!-- PHILIPPINE HISTORY TITLE -->
 
@@ -513,7 +530,7 @@
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="On the Abolition of Slavery in Britain"
                                     android:textColor="@color/colorTextEmphasis"
-                                    android:id="@+id/text_phil_history_title"/>
+                                    android:id="@+id/title_phil"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -598,7 +615,7 @@
                                     android:text="To the Jews who had believed him, Jesus said, 'If you hold to my teaching, you are really my disciples. 32 Then you will know the truth, and the truth will set you free.' John 8:31-32"
                                     android:textColor="@color/colorTextEmphasis"
                                     android:textStyle="italic"
-                                    android:id="@+id/content_bible_verse_phil"/>
+                                    android:id="@+id/featured_verse_phil"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -654,7 +671,8 @@
             The Act passed by Parliament frees all slaves in the nation’s territories after 5-7 years apprenticeship. $37 million had been saved to compensate slave owners.
             It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807."
                                     android:textAppearance="?android:attr/textAppearanceMedium"
-                                    android:textColor="@color/colorTextEmphasis"/>
+                                    android:textColor="@color/colorTextEmphasis"
+                                    android:id="@+id/content_phil" />
 
                             </LinearLayout>
                         </LinearLayout>
@@ -736,7 +754,7 @@
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:text="May any form of slavery anywhere in the world be finally obliterated. May human rights be totally safeguarded. May human rights groups be recognized and supported"
                                     android:textColor="@color/colorTextEmphasis"
-                                    android:id="@+id/content_prayer_focus_phil"/>
+                                    android:id="@+id/prayer_focus_phil"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -791,7 +809,8 @@
                                     android:text="Jesus is the Supreme Liberator of slaves."
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:textColor="@color/colorPrimaryDark"
-                                    android:textStyle="italic"/>
+                                    android:textStyle="italic"
+                                    android:id="@+id/featured_quote_phil"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -805,23 +824,47 @@
                     android:src="@drawable/dotted"
                     android:layerType="software" />
 
-                <!-- SHARE -->
-                <LinearLayout
+            </LinearLayout>
+
+            <!-- ............................................................................... -->
+            <!-- SECTION :: SHARE -->
+            <!-- ............................................................................... -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:text="Share"
+                    android:background="@color/colorButton1"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/share_button"
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"/>
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Share"
-                        android:background="@color/colorButton1"
-                        android:textColor="@color/colorTextEmphasis"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/dialogOk"
-                        android:padding="10dp"
-                        android:layout_margin="5dp"/>
+            </LinearLayout>
 
-                </LinearLayout>
+            <!-- ............................................................................... -->
+            <!-- SECTION :: ERROR MESSAGE -->
+            <!-- ............................................................................... -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unable to connect to server"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/error_message"
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:textStyle="italic"
+                    android:textAlignment="center"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

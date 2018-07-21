@@ -1,4 +1,4 @@
-package com.historicalglimpse.jhesed.historicalglimpse;
+package com.historicalglimpse.jhesed.jhesed;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

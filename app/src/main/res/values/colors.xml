@@ -8,4 +8,5 @@
     <color name="colorTextEmphasis">#373D3F</color>
     <color name="colorBackground">#107896</color>
     <color name="colorAlert">#b22222</color>
+    <color name="colorButton1">#ffe427</color>
 </resources>

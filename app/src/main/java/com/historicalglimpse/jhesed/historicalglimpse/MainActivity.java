@@ -3,6 +3,7 @@ package com.historicalglimpse.jhesed.historicalglimpse;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_today:
+                    todayGlimpse();
+
+                    // Pull to refresh event
+                    final SwipeRefreshLayout pullToRefresh = (SwipeRefreshLayout)
+                            findViewById(R.id.pull_to_refresh);
+                    pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                        @Override
+                        public void onRefresh() {
+                            todayGlimpse();
+                            pullToRefresh.setRefreshing(false);
+                        }
+                    });
                     return true;
                 case R.id.navigation_month:
                     return true;
@@ -42,11 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        apiInterface = APIClient.getClient().create(APIInterface.class);
+    protected void todayGlimpse() {
 
         // Progress bar spinner
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -149,6 +158,14 @@ public class MainActivity extends AppCompatActivity {
                 call.cancel();
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        apiInterface = APIClient.getClient().create(APIInterface.class);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

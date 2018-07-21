@@ -24,6 +24,11 @@
     <!-- SECTION :: CONTENT -->
     <!-- ....................................................................................... -->
 
+    <android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/pull_to_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <ScrollView
             android:id="@+id/scrollview_container"
             android:layout_width="match_parent"
@@ -871,5 +876,7 @@
         </LinearLayout>
 
     </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseResource;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Created by Jhesed Tacadena 2018-07-21
@@ -12,7 +13,7 @@ import retrofit2.http.GET;
 interface APIInterface {
 
     @GET("/cms-glimpse/api/getDataSingle.php")
-    Call<GlimpseResource> getGlimpseToday();
+    Call<GlimpseResource> getGlimpseToday(@Query("title") String title);
 
 //    @POST("/api/users")
 //    Call<User> createUser(@Body User user);

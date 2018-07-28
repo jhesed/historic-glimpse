@@ -3,7 +3,7 @@ package com.historicalglimpse.jhesed.historicalglimpse.pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Datum {
+public class DatumDetails {
 
     @SerializedName("id")
     @Expose

@@ -1,22 +1,20 @@
 package com.historicalglimpse.jhesed.historicalglimpse.pojo;
 
-import android.util.Log;
-
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class GlimpseResource {
+public class GlimpseDetailsResource {
 
     @SerializedName("data")
     @Expose
-    private List<Datum> data = null;
+    private List<DatumDetails> data = null;
 
-    public List<Datum> getData() {
+    public List<DatumDetails> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<DatumDetails> data) {
         this.data = data;
     }
 

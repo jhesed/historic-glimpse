@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.historicalglimpse.jhesed.historicalglimpse.pojo.Datum;
-import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseResource;
+import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumDetails;
+import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseDetailsResource;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -90,17 +90,17 @@ public class MainActivity extends AppCompatActivity {
         final TextView errorMessage = (TextView)this.findViewById(R.id.error_message);
 
         // Get today's historical glimpse
-        Call<GlimpseResource> call = apiInterface.getGlimpseToday(date);
+        Call<GlimpseDetailsResource> call = apiInterface.getGlimpseToday(date);
 
-        call.enqueue(new Callback<GlimpseResource>() {
+        call.enqueue(new Callback<GlimpseDetailsResource>() {
             @Override
-            public void onResponse(Call<GlimpseResource> call, Response<GlimpseResource> response) {
+            public void onResponse(Call<GlimpseDetailsResource> call, Response<GlimpseDetailsResource> response) {
 
-                GlimpseResource resource = response.body();
+                GlimpseDetailsResource resource = response.body();
 
-                List<Datum> data = resource.getData();
-                Datum whData = null;
-                Datum phData = null;
+                List<DatumDetails> data = resource.getData();
+                DatumDetails whData = null;
+                DatumDetails phData = null;
                 if (data != null) {
                     if (data.size() >= 1)
                         whData = data.get(0);
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<GlimpseResource> call, Throwable t) {
+            public void onFailure(Call<GlimpseDetailsResource> call, Throwable t) {
                 errorMessage.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(GONE);
                 call.cancel();

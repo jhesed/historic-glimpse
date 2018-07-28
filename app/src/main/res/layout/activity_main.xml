@@ -18,7 +18,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
     android:background="?android:attr/windowBackground"
-    app:menu="@menu/navigation" />
+    app:menu="@menu/navigation"/>
 
     <!-- ....................................................................................... -->
     <!-- SECTION :: CONTENT -->
@@ -41,7 +41,7 @@
             android:orientation="vertical">
 
             <!-- ............................................................................... -->
-            <!-- SECTION :: WORLD HISTORY -->
+            <!-- SECTION :: PROGRESS BAR -->
             <!-- ............................................................................... -->
 
             <ProgressBar

@@ -1,86 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:weightSum="1"
-    android:padding="10dp"
-    android:layout_marginLeft="10dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.historicalglimpse.jhesed.historicalglimpse.MainActivity">
 
-    <Button
-        android:id="@+id/glimpse_day"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:padding="10dp"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="8"
-        android:background="@drawable/button_shape"
-        android:text="1" />
+    <!-- ....................................................................................... -->
+    <!-- SECTION :: NAVIGATION BAR -->
+    <!-- ....................................................................................... -->
 
-    <LinearLayout
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:textAlignment="center"
-        android:layout_marginLeft="10dp"
-        android:touchscreenBlocksFocus="false">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
 
-        <LinearLayout
+    <!-- ....................................................................................... -->
+    <!-- SECTION :: CONTENT -->
+    <!-- ....................................................................................... -->
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/pull_to_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:id="@+id/scrollview_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/icon_world"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="0.1"
-                app:srcCompat="@mipmap/ic_world" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title_world"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
-                android:text="World history title"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
+                <!-- ............................................................................... -->
+                <!-- SECTION :: PROGRESS BAR -->
+                <!-- ............................................................................... -->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
 
-            <ImageView
-                android:id="@+id/icon_phil"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_weight="0.1"
-                app:srcCompat="@mipmap/ic_phil" />
+                <!-- ............................................................................... -->
+                <!-- SECTION :: GLIMPSE LIST CONTENT -->
+                <!-- ............................................................................... -->
 
-            <TextView
-                android:id="@+id/title_phil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
-                android:text="Philippine history title"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/label_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_gravity="right"
-            android:text="August 1" />
+                <ListView
+                    android:id="@+id/glimpseList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left">
 
-    </LinearLayout>
+                 </ListView>
+
+                <!-- ............................................................................... -->
+                <!-- SECTION :: ERROR MESSAGE -->
+                <!-- ............................................................................... -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Unable to connect to server"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/error_message"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:textStyle="italic"
+                        android:textAlignment="center"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>

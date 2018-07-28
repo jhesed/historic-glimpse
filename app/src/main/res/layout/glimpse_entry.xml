@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp">
+
+    <Button
+        android:id="@+id/glimpse_day"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="10dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="8"
+        android:background="@drawable/button_shape"
+        android:text="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="start"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:touchscreenBlocksFocus="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_world"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_weight="0.15"
+                app:srcCompat="@mipmap/ic_world" />
+
+            <TextView
+                android:id="@+id/title_world"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.85"
+                android:text="World history title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorTextEmphasis" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_phil"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_weight="0.15"
+                app:srcCompat="@mipmap/ic_phil" />
+
+            <TextView
+                android:id="@+id/title_phil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.85"
+                android:text="Philippine history title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/colorTextEmphasis" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

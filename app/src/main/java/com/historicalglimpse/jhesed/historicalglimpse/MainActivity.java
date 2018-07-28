@@ -5,17 +5,24 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.historicalglimpse.jhesed.historicalglimpse.adapters.GlimpseAdapter;
+import com.historicalglimpse.jhesed.historicalglimpse.models.Glimpse;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumDetails;
+import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumList;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseDetailsResource;
+import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseListResource;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +36,9 @@ import static android.view.View.GONE;
 public class MainActivity extends AppCompatActivity {
 
     APIInterface apiInterface;
+    private ListView glimpseListView;
+    private GlimpseAdapter glimpseAdapter;
+    BottomNavigationView navigation;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -36,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+
+                // ----------------------------- GLIMPSE TODAY -------------------------------------
                 case R.id.navigation_today:
+                    setContentView(R.layout.activity_main);
                     getGlimpse(getTodayAsString());
 
                     // Pull to refresh event
@@ -50,17 +63,76 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     return true;
+
+
+                // ------------------------------ GLIMPSE MONTH ------------------------------------
+
                 case R.id.navigation_month:
+
+                    setContentView(R.layout.activity_glimpse_list);
+
+                    final TextView errorMessage = (TextView) findViewById(R.id.error_message);
+                    final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+
+                    progressBar.setVisibility(View.VISIBLE);
+
+                    // Get Month worth of historical glimpse
+                    Call<GlimpseListResource> call = apiInterface.getGlimpseList(
+                            getMonthAsString());
+
+                    call.enqueue(new Callback<GlimpseListResource>() {
+                        @Override
+                        public void onResponse(Call<GlimpseListResource> call,
+                                               Response<GlimpseListResource> response) {
+
+                            GlimpseListResource resource = response.body();
+                            List<DatumList> data = resource.getData();
+
+                            progressBar.setVisibility(GONE);
+
+                            // Map response to Glimpse model object
+                            ArrayList<Glimpse> glimpseListData = new ArrayList<>();
+
+                            for (int i=0; i<data.size(); i++) {
+                                glimpseListData.add(new Glimpse(
+                                        getDayAsString(data.get(i).getGlimpseDate()),
+                                        data.get(i).getGlimpseDate(),
+                                        data.get(i).getHeadingWorld(),
+                                        data.get(i).getHeadingPhil()));
+                            }
+
+                            if (glimpseAdapter == null) {
+                                glimpseListView = (ListView) findViewById(R.id.glimpseList);
+                                glimpseAdapter = new GlimpseAdapter(MainActivity.this,
+                                        glimpseListData);
+                                glimpseListView.setAdapter(glimpseAdapter);
+                            }
+                            glimpseListView.setAdapter(glimpseAdapter);
+
+                            // Hide error message and progress bar
+                            errorMessage.setVisibility(View.GONE);
+                            progressBar.setVisibility(GONE);
+                        }
+
+                        @Override
+                        public void onFailure(Call<GlimpseListResource> call, Throwable t) {
+                            errorMessage.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(GONE);
+                            call.cancel();
+                        }
+                    });
+
                     return true;
                 case R.id.navigation_about:
                     return true;
             }
+
             return false;
         }
 
     };
 
-    protected void getGlimpse(String date) {
+    public void getGlimpse(String date) {
 
         // Progress bar spinner
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -170,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -178,18 +250,18 @@ public class MainActivity extends AppCompatActivity {
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    protected String getTodayAsString() {
+    public String getTodayAsString() {
         Date c = Calendar.getInstance().getTime();
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         return df.format(c);
     }
 
-    protected String getMonthAsString() {
+    public String getMonthAsString() {
         Date c = Calendar.getInstance().getTime();
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -198,4 +270,7 @@ public class MainActivity extends AppCompatActivity {
         return formattedDate;
     }
 
+    public String getDayAsString(String date) {
+        return date.substring(date.lastIndexOf("-")+1, date.length());
+    }
 }

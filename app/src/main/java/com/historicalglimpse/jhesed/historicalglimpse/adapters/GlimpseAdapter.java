@@ -7,10 +7,12 @@ package com.historicalglimpse.jhesed.historicalglimpse.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.historicalglimpse.jhesed.historicalglimpse.R;
@@ -25,7 +27,7 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
     private Context context;
 
     public GlimpseAdapter(Context adapterContext, ArrayList<Glimpse> glimpseList) {
-        super(adapterContext, R.layout.activity_glimpse_list, glimpseList);
+        super(adapterContext, R.layout.glimpse_entry, glimpseList);
         context = adapterContext;
     }
 
@@ -41,7 +43,7 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         Glimpse glimpse = getItem(position);
 
         if (view == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.activity_glimpse_list, null);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.glimpse_entry, null);
             viewHolder = new ViewHolder();
         }
         else {
@@ -51,8 +53,8 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         // Populate the data into the template view using the data object
         viewHolder.glimpseDate = glimpse.glimpseDate;
 
-        viewHolder.glimpseDateLabel = (TextView) view.findViewById(R.id.label_date);
-        viewHolder.glimpseDateLabel.setText(glimpse.glimpseDate);
+        viewHolder.glimpseDay = (Button) view.findViewById(R.id.glimpse_day);
+        viewHolder.glimpseDay.setText(glimpse.glimpseDay);
 
         viewHolder.headingWorld = (TextView) view.findViewById(R.id.title_world);
         viewHolder.headingWorld.setText(glimpse.headingWorld);
@@ -65,16 +67,31 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
 
         /* SECTION : Events */
 
-//        view.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
         // TODO
+
+            @Override
+            public void onClick(View view) {
+
+//                setContentView(R.layout.activity_main);
+//                getGlimpse(getTodayAsString());
 //
-//            @Override
-//            public void onClick(View view) {
+//                // Pull to refresh event
+//                final SwipeRefreshLayout pullToRefresh = (SwipeRefreshLayout)
+//                        findViewById(R.id.pull_to_refresh);
+//                pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//                    @Override
+//                    public void onRefresh() {
+//                        getGlimpse(getTodayAsString());
+//                        pullToRefresh.setRefreshing(false);
+//                    }
+//                });
+//
 //                Intent intent = new Intent(context, VerseDetailsActivity.class);
 //                intent.putExtra("verseId", viewHolder.verseId);
 //                context.startActivity(intent);
-//            }
-//        });
+            }
+        });
         return view;
     }
 
@@ -84,7 +101,7 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
          */
         String glimpseDate;
 
-        TextView glimpseDateLabel;
+        Button glimpseDay;
         TextView headingWorld;
         TextView headingPhil;
 

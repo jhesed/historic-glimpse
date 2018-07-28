@@ -11,7 +11,8 @@
         android:id="@+id/navigation_month"
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="@string/title_month"
-        android:tint="@android:color/black"/>
+        android:tint="@android:color/black"
+        />
 
     <item
         android:id="@+id/navigation_about"

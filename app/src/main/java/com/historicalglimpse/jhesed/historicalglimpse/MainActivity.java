@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,10 +37,9 @@ import static android.view.View.GONE;
 public class MainActivity extends AppCompatActivity {
 
     APIInterface apiInterface;
+    BottomNavigationView navigation;
     private ListView glimpseListView;
     private GlimpseAdapter glimpseAdapter;
-    BottomNavigationView navigation;
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -135,6 +133,35 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        /**** Method for Setting the Height of the ListView dynamically.
+         **** Hack to fix the issue of not showing all the items of the ListView
+         **** when placed inside a ScrollView
+         *  source: https://stackoverflow.com/questions/18367522/android-list-view-inside-a-scroll-view
+         * ****/
+
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)
+            return;
+
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(
+                listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            view = listAdapter.getView(i, view, listView);
+            if (i == 0)
+                view.setLayoutParams(new ViewGroup.LayoutParams(
+                        desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += view.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+    }
 
     public void getGlimpse(String date) {
 
@@ -250,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        apiInterface = APIClient.getClient().create(APIInterface.class);
+        apiInterface = APIClient.getClient(this).create(APIInterface.class);
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -289,34 +316,5 @@ public class MainActivity extends AppCompatActivity {
 
     public String getDayAsString(String date) {
         return date.substring(date.lastIndexOf("-")+1, date.length());
-    }
-
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        /**** Method for Setting the Height of the ListView dynamically.
-         **** Hack to fix the issue of not showing all the items of the ListView
-         **** when placed inside a ScrollView
-         *  source: https://stackoverflow.com/questions/18367522/android-list-view-inside-a-scroll-view
-         * ****/
-
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null)
-            return;
-
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(
-                listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-        int totalHeight = 0;
-        View view = null;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            view = listAdapter.getView(i, view, listView);
-            if (i == 0)
-                view.setLayoutParams(new ViewGroup.LayoutParams(
-                        desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            totalHeight += view.getMeasuredHeight();
-        }
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-        listView.setLayoutParams(params);
     }
 }

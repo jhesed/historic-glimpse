@@ -1,5 +1,8 @@
 package com.historicalglimpse.jhesed.historicalglimpse;
 
+import android.content.Context;
+
+import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -13,12 +16,19 @@ class APIClient {
 
     private static Retrofit retrofit = null;
 
-    static Retrofit getClient() {
+    static Retrofit getClient(Context context) {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+//        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
+        // Caching
+        int cacheSize = 1 * 1024 * 1024; // 1 MB
+        Cache cache = new Cache(context.getCacheDir(), cacheSize);
+
+        OkHttpClient client = new OkHttpClient.Builder()
+                .cache(cache)
+                .build();
 
         retrofit = new Retrofit.Builder()
                 // TODO: Replace with corresponding url

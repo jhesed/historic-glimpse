@@ -29,68 +29,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ScrollView
-            android:id="@+id/scrollview_container"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:fillViewport="true">
 
-            <LinearLayout
+            <!-- ............................................................................... -->
+            <!-- SECTION :: PROGRESS BAR -->
+            <!-- ............................................................................... -->
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <!-- ............................................................................... -->
+            <!-- SECTION :: GLIMPSE LIST CONTENT -->
+            <!-- ............................................................................... -->
+
+
+            <ListView
+                android:id="@+id/glimpseList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_gravity="start">
 
-                <!-- ............................................................................... -->
-                <!-- SECTION :: PROGRESS BAR -->
-                <!-- ............................................................................... -->
+             </ListView>
 
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="wrap_content"
+            <!-- ............................................................................... -->
+            <!-- SECTION :: ERROR MESSAGE -->
+            <!-- ............................................................................... -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Unable to connect to server"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/error_message"
                     android:padding="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:textStyle="italic"
+                    android:textAlignment="center"
                     android:visibility="gone"/>
-
-                <!-- ............................................................................... -->
-                <!-- SECTION :: GLIMPSE LIST CONTENT -->
-                <!-- ............................................................................... -->
-
-
-                <ListView
-                    android:id="@+id/glimpseList"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left">
-
-                 </ListView>
-
-                <!-- ............................................................................... -->
-                <!-- SECTION :: ERROR MESSAGE -->
-                <!-- ............................................................................... -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Unable to connect to server"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:id="@+id/error_message"
-                        android:padding="10dp"
-                        android:layout_margin="5dp"
-                        android:textStyle="italic"
-                        android:textAlignment="center"
-                        android:visibility="gone"/>
-
-                </LinearLayout>
 
             </LinearLayout>
 
-        </ScrollView>
+        </RelativeLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

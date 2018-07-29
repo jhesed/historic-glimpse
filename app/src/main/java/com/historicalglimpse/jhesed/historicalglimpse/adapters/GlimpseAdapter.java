@@ -8,6 +8,7 @@ package com.historicalglimpse.jhesed.historicalglimpse.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
 
     public GlimpseAdapter(Context adapterContext, ArrayList<Glimpse> glimpseList) {
         super(adapterContext, R.layout.glimpse_entry, glimpseList);
+        Log.d("---glimpse list size", "" + glimpseList.size());
         context = adapterContext;
     }
 

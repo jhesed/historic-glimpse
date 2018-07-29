@@ -10,28 +10,29 @@
 
     <Button
         android:id="@+id/glimpse_day"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:background="@color/colorPrimary"
         android:padding="10dp"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="8"
-        android:background="@drawable/button_shape"
-        android:text="1" />
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:gravity="start"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp"
         android:touchscreenBlocksFocus="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icon_world"
@@ -44,19 +45,20 @@
                 android:id="@+id/title_world"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.85"
-                android:text="World history title"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginLeft="10dp"
+                android:layout_weight="0.85"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:text="World history title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/colorTextEmphasis" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icon_phil"
@@ -69,12 +71,12 @@
                 android:id="@+id/title_phil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.85"
-                android:text="Philippine history title"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginLeft="10dp"
+                android:layout_weight="0.85"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:text="Philippine history title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/colorTextEmphasis" />
         </LinearLayout>
 

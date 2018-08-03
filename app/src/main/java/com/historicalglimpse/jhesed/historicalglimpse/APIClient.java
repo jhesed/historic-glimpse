@@ -32,8 +32,8 @@ class APIClient {
 
         retrofit = new Retrofit.Builder()
                 // TODO: Replace with corresponding url
-                .baseUrl("http://192.168.43.91")
-//                .baseUrl("http://jsoscc.com")
+//                .baseUrl("http://192.168.43.91")
+                .baseUrl("http://jsoscc.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

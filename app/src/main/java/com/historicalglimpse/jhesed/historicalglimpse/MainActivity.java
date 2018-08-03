@@ -7,10 +7,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -134,35 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        /**** Method for Setting the Height of the ListView dynamically.
-         **** Hack to fix the issue of not showing all the items of the ListView
-         **** when placed inside a ScrollView
-         *  source: https://stackoverflow.com/questions/18367522/android-list-view-inside-a-scroll-view
-         * ****/
-
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null)
-            return;
-
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(
-                listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-        int totalHeight = 0;
-        View view = null;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            view = listAdapter.getView(i, view, listView);
-            if (i == 0)
-                view.setLayoutParams(new ViewGroup.LayoutParams(
-                        desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            totalHeight += view.getMeasuredHeight();
-        }
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-        listView.setLayoutParams(params);
-    }
-
     public void getGlimpse(String date) {
 
         // Progress bar spinner
@@ -191,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView rFeaturedQuotePhil = (TextView)this.findViewById(R.id.featured_quote_phil);
 
         final TextView errorMessage = (TextView)this.findViewById(R.id.error_message);
+        errorMessage.setVisibility(GONE);
 
         // Get today's historical glimpse
         Call<GlimpseDetailsResource> call = apiInterface.getGlimpseToday(date);
@@ -292,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+
                 getGlimpse(getTodayAsString());
                 pullToRefresh.setRefreshing(false);
             }
@@ -317,4 +288,16 @@ public class MainActivity extends AppCompatActivity {
     public String getDayAsString(String date) {
         return date.substring(date.lastIndexOf("-")+1, date.length());
     }
+//
+//    private boolean loadFragment(Fragment fragment) {
+//        //switching fragment
+//        if (fragment != null) {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.fragment_container, fragment)
+//                    .commit();
+//            return true;
+//        }
+//        return false;
+//    }
 }

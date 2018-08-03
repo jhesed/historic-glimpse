@@ -18,35 +18,37 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener
-                (new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        Fragment selectedFragment = null;
-                        switch (item.getItemId()) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
 
-                            // ----------------------------- GLIMPSE TODAY ---------------------------------
+                // ----------------------------- GLIMPSE TODAY -------------------------------------
 
-                            case R.id.navigation_today:
-                                selectedFragment = new FragmentDaily();
-                                break;
+                case R.id.navigation_today:
+                    selectedFragment = new FragmentDaily();
+                    break;
 
-                            // ------------------------------ GLIMPSE MONTH --------------------------------
+                // ------------------------------ GLIMPSE MONTH ------------------------------------
 
-                            case R.id.navigation_month:
-                                selectedFragment = FragmentMonthly.newInstance();
+                case R.id.navigation_month:
+                    selectedFragment = FragmentMonthly.newInstance();
+                    break;
 
-                                break;
-                            case R.id.navigation_about:
-//                                selectedFragment = ItemThreeFragment.newInstance();
-                                break;
-                        }
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout, selectedFragment);
-                        transaction.commit();
-                        return true;
-                    }
-                });
+                // ------------------------------ GLIMPSE ABOUT ------------------------------------
+                case R.id.navigation_about:
+                    selectedFragment = FragmentAbout.newInstance();
+                    break;
+                }
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout, selectedFragment);
+                transaction.commit();
+                return true;
+
+                }
+            });
 
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

@@ -20,10 +20,7 @@ import com.historicalglimpse.jhesed.historicalglimpse.models.Glimpse;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumList;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseListResource;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -31,10 +28,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.view.View.GONE;
+import static com.historicalglimpse.jhesed.historicalglimpse.Common.getDayAsString;
 
 public class FragmentMonthly extends Fragment {
 
-    APIInterface apiInterface;
     Context context;
     private ListView glimpseListView;
     private GlimpseAdapter glimpseAdapter;
@@ -47,10 +44,7 @@ public class FragmentMonthly extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // TODO: Make this common to fragments
         this.context = this.getContext();
-        apiInterface = APIClient.getClient(context).create(APIInterface.class);
     }
 
     @Override
@@ -68,8 +62,8 @@ public class FragmentMonthly extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
 
         // Get Month worth of historical glimpse
-        Call<GlimpseListResource> call = apiInterface.getGlimpseList(
-                getMonthAsString());
+        Call<GlimpseListResource> call = MainActivity.getAPIInterface().getGlimpseList(
+                Common.getMonthAsString());
 
         call.enqueue(new Callback<GlimpseListResource>() {
             @Override
@@ -114,17 +108,4 @@ public class FragmentMonthly extends Fragment {
         });
     }
 
-
-    public String getMonthAsString() {
-        Date c = Calendar.getInstance().getTime();
-
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String formattedDate = df.format(c);
-        formattedDate = formattedDate.substring(0, formattedDate.lastIndexOf("-"));
-        return formattedDate;
-    }
-
-    public String getDayAsString(String date) {
-        return date.substring(date.lastIndexOf("-") + 1, date.length());
-    }
 }

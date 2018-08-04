@@ -11,7 +11,7 @@ import retrofit2.http.Query;
  * Created by Jhesed Tacadena 2018-07-21
  */
 
-interface APIInterface {
+public interface APIInterface {
 
     @GET("/cms-glimpse/api/getDataSingle.php")
     Call<GlimpseDetailsResource> getGlimpseToday(@Query("title") String title);

@@ -10,11 +10,18 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    static APIInterface apiInterface;
+
+    public static APIInterface getAPIInterface() {
+        return apiInterface;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        apiInterface = APIClient.getClient(this).create(APIInterface.class);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
 
@@ -54,6 +61,5 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, FragmentDaily.newInstance());
         transaction.commit();
-
     }
 }

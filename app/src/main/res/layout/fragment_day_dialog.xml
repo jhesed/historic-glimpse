@@ -1,15 +1,53 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:orientation="vertical"
-    tools:context="com.historicalglimpse.jhesed.historicalglimpse.FragmentDaily">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <!-- ............................................................................... -->
+        <!-- SECTION :: DIALOG BOX TITLE -->
+        <!-- ............................................................................... -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorButton1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="1">
+
+            <!--Change Icon and Title programatically-->
+
+            <TextView
+                android:id="@+id/dialogTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:gravity="fill_vertical|center"
+                android:text=""
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/cancel_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:contentDescription=""
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+        </RelativeLayout>
 
         <!-- ............................................................................... -->
         <!-- SECTION :: PROGRESS BAR -->
@@ -348,80 +386,68 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- DOTTED DIVIDER -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software"
+                android:src="@drawable/dotted" />
 
             <!-- QUOTATION -->
-
             <LinearLayout
-                android:id="@+id/group_featured_quote_wh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- DOTTED DIVIDER -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layerType="software"
-                    android:src="@drawable/dotted" />
+                android:layout_gravity="center"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:background="@color/colorTextBackground"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="10dp"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorTextBackground"
-                        android:gravity="center"
                     android:orientation="horizontal">
 
                     <!--DYNAMIC VALUES-->
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="0"
+                        android:background="@color/colorTextBackground"
+                        android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="0"
                             android:background="@color/colorTextBackground"
-                            android:orientation="horizontal">
+                            android:orientation="vertical"
+                            android:weightSum="1">
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/featured_quote_wh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@color/colorTextBackground"
-                                android:orientation="vertical"
-                                android:weightSum="1">
+                                android:text="Jesus is the Supreme Liberator of slaves."
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="italic" />
 
-                                <TextView
-                                    android:id="@+id/featured_quote_wh"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Jesus is the Supreme Liberator of slaves."
-                                    android:textAppearance="?android:attr/textAppearanceMedium"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textStyle="italic" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-
-                <!-- DOTTED DIVIDER -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layerType="software"
-                    android:src="@drawable/dotted" />
-
+                </LinearLayout>
             </LinearLayout>
 
+            <!-- DOTTED DIVIDER -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software"
+                android:src="@drawable/dotted" />
 
         </LinearLayout>
 
@@ -749,99 +775,90 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- QUOTATION -->
+            <!-- DOTTED DIVIDER -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software"
+                android:src="@drawable/dotted" />
 
+            <!-- QUOTATION -->
             <LinearLayout
-                android:id="@+id/group_featured_quote_ph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
 
-                <!-- DOTTED DIVIDER -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layerType="software"
-                    android:src="@drawable/dotted" />
-
-                <!-- QUOTATION -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:background="@color/colorTextBackground"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="10dp"
-                    android:weightSum="1">
+                    android:orientation="horizontal">
+
+                    <!--DYNAMIC VALUES-->
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="0"
                         android:background="@color/colorTextBackground"
-                        android:gravity="center"
                         android:orientation="horizontal">
-
-                        <!--DYNAMIC VALUES-->
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_weight="0"
                             android:background="@color/colorTextBackground"
-                            android:orientation="horizontal">
+                            android:orientation="vertical"
+                            android:weightSum="1">
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/featured_quote_phil"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@color/colorTextBackground"
-                                android:orientation="vertical"
-                                android:weightSum="1">
+                                android:text="Jesus is the Supreme Liberator of slaves."
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="italic" />
 
-                                <TextView
-                                    android:id="@+id/featured_quote_phil"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Jesus is the Supreme Liberator of slaves."
-                                    android:textAppearance="?android:attr/textAppearanceMedium"
-                                    android:textColor="@color/colorPrimaryDark"
-                                    android:textStyle="italic" />
-
-                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-
-                <!-- DOTTED DIVIDER -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:layerType="software"
-                    android:src="@drawable/dotted" />
             </LinearLayout>
+
+            <!-- DOTTED DIVIDER -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software"
+                android:src="@drawable/dotted" />
+
         </LinearLayout>
 
         <!-- ............................................................................... -->
         <!-- SECTION :: SHARE -->
         <!-- ............................................................................... -->
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!--<Button-->
-        <!--android:id="@+id/share_button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="5dp"-->
-        <!--android:background="@color/colorButton1"-->
-        <!--android:padding="10dp"-->
-        <!--android:text="Share"-->
-        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-        <!--android:textColor="@color/colorTextEmphasis"-->
-        <!--android:visibility="gone" />-->
+            <Button
+                android:id="@+id/ok_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/colorButton1"
+                android:padding="10dp"
+                android:text="Ok"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorTextEmphasis" />
 
-        <!--</LinearLayout>-->
+        </LinearLayout>
 
         <!-- ............................................................................... -->
         <!-- SECTION :: ERROR MESSAGE -->
@@ -865,4 +882,5 @@
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

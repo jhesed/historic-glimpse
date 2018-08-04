@@ -5,17 +5,19 @@ package com.historicalglimpse.jhesed.historicalglimpse.adapters;
  */
 
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.historicalglimpse.jhesed.historicalglimpse.Common;
+import com.historicalglimpse.jhesed.historicalglimpse.MainActivity;
 import com.historicalglimpse.jhesed.historicalglimpse.R;
 import com.historicalglimpse.jhesed.historicalglimpse.models.Glimpse;
 
@@ -29,7 +31,6 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
 
     public GlimpseAdapter(Context adapterContext, ArrayList<Glimpse> glimpseList) {
         super(adapterContext, R.layout.glimpse_entry, glimpseList);
-        Log.d("---glimpse list size", "" + glimpseList.size());
         context = adapterContext;
     }
 
@@ -55,13 +56,13 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         // Populate the data into the template view using the data object
         viewHolder.glimpseDate = glimpse.glimpseDate;
 
-        viewHolder.glimpseDay = (Button) view.findViewById(R.id.glimpse_day);
+        viewHolder.glimpseDay = view.findViewById(R.id.glimpse_day);
         viewHolder.glimpseDay.setText(glimpse.glimpseDay);
 
-        viewHolder.headingWorld = (TextView) view.findViewById(R.id.title_world);
+        viewHolder.headingWorld = view.findViewById(R.id.title_world);
         viewHolder.headingWorld.setText(glimpse.headingWorld);
 
-        viewHolder.headingPhil = (TextView) view.findViewById(R.id.title_phil);
+        viewHolder.headingPhil = view.findViewById(R.id.title_phil);
         viewHolder.headingPhil.setText(glimpse.headingPhil);
 
         view.setTag(viewHolder);
@@ -74,27 +75,51 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
 
             @Override
             public void onClick(View view) {
-
-//                setContentView(R.layout.activity_main);
-//                getGlimpse(getTodayAsString());
-//
-//                // Pull to refresh event
-//                final SwipeRefreshLayout pullToRefresh = (SwipeRefreshLayout)
-//                        findViewById(R.id.pull_to_refresh);
-//                pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//                    @Override
-//                    public void onRefresh() {
-//                        getGlimpse(getTodayAsString());
-//                        pullToRefresh.setRefreshing(false);
-//                    }
-//                });
-//
-//                Intent intent = new Intent(context, VerseDetailsActivity.class);
-//                intent.putExtra("verseId", viewHolder.verseId);
-//                context.startActivity(intent);
+                popUpGlimpseDetails(context, viewHolder.glimpseDate);
             }
         });
         return view;
+    }
+
+    protected void popUpGlimpseDetails(Context context, String date) {
+        /**
+         * Pop up historic glimpse
+         */
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        // Get the layout inflater
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+
+        // Inflate and set the layout for the dialog
+        // Pass null as the parent view because its going in the dialog layout
+        View layout = inflater.inflate(R.layout.fragment_day_dialog, null);
+        builder.setView(layout);
+        final AlertDialog dialog = builder.create();
+
+        TextView dialogTitle = layout.findViewById(R.id.dialogTitle);
+        dialogTitle.setText(date);
+        Common.getGlimpse(date, layout, MainActivity.getAPIInterface());
+
+        // close dialog box on click
+
+        Button okButton = layout.findViewById(R.id.ok_button);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        ImageView cancelButton = layout.findViewById(R.id.cancel_icon);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     private static class ViewHolder {
@@ -108,4 +133,5 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         TextView headingPhil;
 
     }
+
 }

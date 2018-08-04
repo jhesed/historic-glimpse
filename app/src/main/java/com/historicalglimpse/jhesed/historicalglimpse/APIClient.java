@@ -21,11 +21,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Jhesed Tacadena 2018-07-21
  */
 
-class APIClient {
+public class APIClient {
 
     private static Retrofit retrofit = null;
 
-    static Retrofit getClient(Context context) {
+    public static Retrofit getClient(Context context) {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://jsoscc.com")

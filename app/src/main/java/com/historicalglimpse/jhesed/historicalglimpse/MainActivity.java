@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout, selectedFragment);
+                transaction.addToBackStack(null);
                 transaction.commit();
                 return true;
 
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, FragmentDaily.newInstance());
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

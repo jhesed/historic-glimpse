@@ -94,8 +94,10 @@ public class Common {
                     rPrayerFocusWh.setText(prayerFocusWh);
                     rFeaturedQuoteWh.setText(featuredQuoteWh);
 
-                    if (featuredQuoteWh != null && featuredQuoteWh.equals("")) {
+                    if (featuredQuoteWh != null && featuredQuoteWh.trim().equals("") &&
+                            featuredQuoteWh.length() != 0) {
                         rFeaturedQuoteWh.setText(featuredQuoteWh);
+                        groupFeaturedQuoteWh.setVisibility(View.VISIBLE);
                     } else {
                         groupFeaturedQuoteWh.setVisibility(GONE);
                     }
@@ -120,8 +122,10 @@ public class Common {
                     rContentPhil.setText(contentPhil);
                     rPrayerFocusPhil.setText(prayerFocusPhil);
 
-                    if (featuredQuotePhil != null && featuredQuotePhil.equals("")) {
+                    if (featuredQuotePhil != null && featuredQuotePhil.trim().equals("")
+                            && featuredQuotePhil.length() != 0) {
                         rFeaturedQuotePhil.setText(featuredQuotePhil);
+                        groupFeaturedQuotePh.setVisibility(View.VISIBLE);
                     } else {
                         groupFeaturedQuotePh.setVisibility(GONE);
                     }

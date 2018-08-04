@@ -24,45 +24,45 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:text="Christian Daily Historical Devotion (CDHD) is a daily glimpse of particular events or  historical personalities in both the Philippines and world history; and appropriate Bible verses to provide practical challenge and applications."
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/colorTextEmphasis"
-                android:textStyle="italic"
-                android:padding="10dp"/>
+                android:textStyle="italic" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The following simple but tweaked quotations serve as CDHD's historical principles: \u2022 In history, we can see God's story;"
+                android:padding="10dp"
+                android:text="The following simple but tweaked quotations serve as CDHD's historical principles:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorTextEmphasis"
-                android:padding="10dp"/>
+                android:textColor="@color/colorTextEmphasis" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:padding="10dp"
                 android:text="\u2022 In history, we can see God's story;"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorTextEmphasis"
-                android:layout_marginLeft="15dp"
-                android:padding="10dp"/>
+                android:textColor="@color/colorTextEmphasis" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:padding="10dp"
                 android:text="\u2022 Ang hindi lumingon sa kasaysayan, hindi makakarating sa kadakilaan."
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginLeft="15dp"
-                android:textColor="@color/colorTextEmphasis"
-                android:padding="10dp"/>
+                android:textColor="@color/colorTextEmphasis" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:text="It is important to be aware of the salient features of history because these can bridge us to a higher plane of living - one that is productive for the present and triumphant in the future with the Creator and Supreme History Maker!"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/colorTextEmphasis"
-                android:padding="10dp"/>
+                android:textColor="@color/colorTextEmphasis" />
 
         </LinearLayout>
 
@@ -93,9 +93,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Writer:"
+                    android:text="Website:"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/colorTextEmphasis"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Writer:"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,6 +132,11 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="www.jsoscc.com"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

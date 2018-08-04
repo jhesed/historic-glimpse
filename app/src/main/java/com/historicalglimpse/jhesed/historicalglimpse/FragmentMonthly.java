@@ -37,8 +37,7 @@ public class FragmentMonthly extends Fragment {
     private GlimpseAdapter glimpseAdapter;
 
     public static FragmentMonthly newInstance() {
-        FragmentMonthly fragment = new FragmentMonthly();
-        return fragment;
+        return new FragmentMonthly();
     }
 
     @Override

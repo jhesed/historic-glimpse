@@ -16,8 +16,7 @@ import static com.historicalglimpse.jhesed.historicalglimpse.Common.getTodayAsSt
 public class FragmentDaily extends Fragment {
 
     public static FragmentDaily newInstance() {
-        FragmentDaily fragment = new FragmentDaily();
-        return fragment;
+        return new FragmentDaily();
     }
 
     @Override

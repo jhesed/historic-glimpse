@@ -19,13 +19,4 @@ public interface APIInterface {
     @GET("/cms-glimpse/api/getData.php")
     Call<GlimpseListResource> getGlimpseList(@Query("date_range") String date_range);
 
-//    @POST("/api/users")
-//    Call<User> createUser(@Body User user);
-
-//    @GET("/api/users?")
-//    Call<UserList> doGetUserList(@Query("page") String page);
-
-//    @FormUrlEncoded
-//    @POST("/api/users?")
-//    Call<UserList> doCreateUserWithField(@Field("name") String name, @Field("job") String job);
 }

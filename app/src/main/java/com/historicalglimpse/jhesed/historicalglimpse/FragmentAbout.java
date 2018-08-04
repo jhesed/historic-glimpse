@@ -14,8 +14,7 @@ import android.view.ViewGroup;
 public class FragmentAbout extends Fragment {
 
     public static FragmentAbout newInstance() {
-        FragmentAbout fragment = new FragmentAbout();
-        return fragment;
+        return new FragmentAbout();
     }
 
     @Override

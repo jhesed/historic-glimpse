@@ -39,7 +39,7 @@ public class Common {
         rContainerWh.setVisibility(GONE);
         rContainerPh.setVisibility(GONE);
         final LinearLayout groupFeaturedQuoteWh = view.findViewById(R.id.group_featured_quote_wh);
-        final LinearLayout groupFeaturedQuotePh = view.findViewById(R.id.group_featured_quote_wh);
+        final LinearLayout groupFeaturedQuotePh = view.findViewById(R.id.group_featured_quote_ph);
 
         // Retrieve layout objects (world history)
         final TextView rHeadingWh = view.findViewById(R.id.title_wh);
@@ -94,7 +94,7 @@ public class Common {
                     rPrayerFocusWh.setText(prayerFocusWh);
                     rFeaturedQuoteWh.setText(featuredQuoteWh);
 
-                    if (featuredQuoteWh != null || featuredQuoteWh != "") {
+                    if (featuredQuoteWh != null && featuredQuoteWh.equals("")) {
                         rFeaturedQuoteWh.setText(featuredQuoteWh);
                     } else {
                         groupFeaturedQuoteWh.setVisibility(GONE);
@@ -120,7 +120,7 @@ public class Common {
                     rContentPhil.setText(contentPhil);
                     rPrayerFocusPhil.setText(prayerFocusPhil);
 
-                    if (featuredQuotePhil != null || featuredQuotePhil != "") {
+                    if (featuredQuotePhil != null && featuredQuotePhil.equals("")) {
                         rFeaturedQuotePhil.setText(featuredQuotePhil);
                     } else {
                         groupFeaturedQuotePh.setVisibility(GONE);

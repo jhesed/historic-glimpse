@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:padding="10dp"
-            android:text="Unable to connect to server"
+            android:text="@string/connection_error"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="italic"

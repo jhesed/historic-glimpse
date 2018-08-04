@@ -3,4 +3,24 @@
     <string name="title_today">Today</string>
     <string name="title_month">This Month</string>
     <string name="title_about">About</string>
+    <string name="about1">Christian Daily Historical Devotion (CDHD) is a daily glimpse of particular events or historical personalities in both the Philippines and world history; and appropriate Bible verses to provide practical challenge and applications.</string>
+    <string name="about2">The following simple but tweaked quotations serve as CDHD\'s historical principles:</string>
+    <string name="about3">• In history, we can see God\'s story;</string>
+    <string name="about4">• Ang hindi lumingon sa kasaysayan, hindi makakarating sa kadakilaan.</string>
+    <string name="about5">It is important to be aware of the salient features of history because these can bridge us to a higher plane of living - one that is productive for the present and triumphant in the future with the Creator and Supreme History Maker!</string>
+    <string name="website_label">Website:</string>
+    <string name="writer_label">Writer:</string>
+    <string name="contact_info_label">Contact Info:</string>
+    <string name="developer_label">Developer:</string>
+    <string name="donate_btc_label">Donate BTC:</string>
+    <string name="website_value">www.jsoscc.com</string>
+    <string name="writer_value">Pastor Jose Tacadena</string>
+    <string name="contact_info_value">+639324811521</string>
+    <string name="developer_email_value">jhesed.tacadena@gmail.com</string>
+    <string name="donate_btc_value">3DK8NFyGUJorowYDxcgkCp22hmKdEfnyS6</string>
+    <string name="world_history_label">World History</string>
+    <string name="bible_verse_label">Bible Verse</string>
+    <string name="philippine_history_label">Philippine History</string>
+    <string name="prayer_focus_label">Prayer Focus</string>
+    <string name="connection_error">Unable to connect to server</string>
 </resources>

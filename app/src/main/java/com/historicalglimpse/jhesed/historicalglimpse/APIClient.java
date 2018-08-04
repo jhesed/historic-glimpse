@@ -56,7 +56,7 @@ public class APIClient {
         return cache;
     }
 
-    public static Interceptor provideCacheInterceptor() {
+    private static Interceptor provideCacheInterceptor() {
         return new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -74,7 +74,7 @@ public class APIClient {
         };
     }
 
-    public static Interceptor provideOfflineCacheInterceptor(final Context context) {
+    private static Interceptor provideOfflineCacheInterceptor(final Context context) {
         return new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {

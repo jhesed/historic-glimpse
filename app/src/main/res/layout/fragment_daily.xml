@@ -49,7 +49,7 @@
                     android:layout_margin="5dp"
                     android:background="@color/colorBackground"
                     android:padding="10dp"
-                    android:text="World History"
+                    android:text="@string/world_history_label"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorTextBackground" />
@@ -115,7 +115,7 @@
                                 android:id="@+id/title_wh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="On the Abolition of Slavery in Britain"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -191,7 +191,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingBottom="10dp"
-                                android:text="Bible Verse"
+                                android:text="@string/bible_verse_label"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorPrimary" />
 
@@ -199,7 +199,7 @@
                                 android:id="@+id/featured_verse_wh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="To the Jews who had believed him, Jesus said, 'If you hold to my teaching, you are really my disciples. 32 Then you will know the truth, and the truth will set you free.' John 8:31-32"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis"
                                 android:textStyle="italic" />
@@ -255,9 +255,7 @@
                                 android:id="@+id/content_wh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="In 1833, Britain abolished slavery after 400 years.
-            The Act passed by Parliament frees all slaves in the nation’s territories after 5-7 years apprenticeship. $37 million had been saved to compensate slave owners.
-            It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807."
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -339,7 +337,7 @@
                                 android:id="@+id/prayer_focus_wh"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="May any form of slavery anywhere in the world be finally obliterated. May human rights be totally safeguarded. May human rights groups be recognized and supported"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -402,7 +400,7 @@
                                     android:id="@+id/featured_quote_wh"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Jesus is the Supreme Liberator of slaves."
+                                    android:text=""
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textStyle="italic" />
@@ -451,7 +449,7 @@
                     android:layout_margin="5dp"
                     android:background="@color/colorBackground"
                     android:padding="10dp"
-                    android:text="Philippine History"
+                    android:text="@string/philippine_history_label"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorTextBackground" />
@@ -516,7 +514,7 @@
                                 android:id="@+id/title_phil"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="On the Abolition of Slavery in Britain"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -592,7 +590,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingBottom="10dp"
-                                android:text="Bible Verse"
+                                android:text="@string/bible_verse_label"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorPrimary" />
 
@@ -600,7 +598,7 @@
                                 android:id="@+id/featured_verse_phil"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="To the Jews who had believed him, Jesus said, 'If you hold to my teaching, you are really my disciples. 32 Then you will know the truth, and the truth will set you free.' John 8:31-32"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis"
                                 android:textStyle="italic" />
@@ -656,9 +654,7 @@
                                 android:id="@+id/content_phil"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="In 1833, Britain abolished slavery after 400 years.
-            The Act passed by Parliament frees all slaves in the nation’s territories after 5-7 years apprenticeship. $37 million had been saved to compensate slave owners.
-            It was a victory for the Anti-Slavery Society, and their leader, Thomas Buxton, who campaigned hard for this amendment. It had completed the work begun 40 years ago by William Wilberforce whose bill abolishing slave trade was passed in 1807."
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -732,7 +728,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingBottom="10dp"
-                                android:text="Prayer Focus"
+                                android:text="@string/prayer_focus_label"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorPrimary" />
 
@@ -740,7 +736,7 @@
                                 android:id="@+id/prayer_focus_phil"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="May any form of slavery anywhere in the world be finally obliterated. May human rights be totally safeguarded. May human rights groups be recognized and supported"
+                                android:text=""
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:textColor="@color/colorTextEmphasis" />
 
@@ -803,7 +799,7 @@
                                     android:id="@+id/featured_quote_phil"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Jesus is the Supreme Liberator of slaves."
+                                    android:text=""
                                     android:textAppearance="?android:attr/textAppearanceMedium"
                                     android:textColor="@color/colorPrimaryDark"
                                     android:textStyle="italic" />
@@ -856,7 +852,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding="10dp"
-                android:text="Unable to connect to server"
+                android:text="@string/connection_error"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="italic"

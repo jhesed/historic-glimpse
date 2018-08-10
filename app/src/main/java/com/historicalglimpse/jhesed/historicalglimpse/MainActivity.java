@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        try {
+//            getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+            getActionBar().setIcon(R.drawable.ic_cdhd);
+        }
+        catch(Exception e) {
+            //  TODO
+        }
+
         apiInterface = APIClient.getClient(this).create(APIInterface.class);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);

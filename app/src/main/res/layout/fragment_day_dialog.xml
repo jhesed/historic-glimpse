@@ -170,91 +170,6 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
-            <!-- HIGHLIGHTED VERSE -->
-
-            <!-- PRAYER FOCUS -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/colorTextBackground"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="1">
-
-                <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                    android:layout_weight=".10"
-                android:background="@color/colorTextBackground"
-                android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <!--TITLES-->
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                    android:background="@color/colorTextBackground"
-                    android:gravity="center"
-                        android:orientation="vertical">
-
-
-                        <ImageView
-                            android:id="@+id/ic_highlighted_verse"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@mipmap/ic_bible" />
-
-                    </LinearLayout>
-
-                    <!--DYNAMIC VALUES-->
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight=".9"
-                        android:background="@color/colorTextBackground"
-                        android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorTextBackground"
-                        android:orientation="vertical"
-                        android:weightSum="1">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
-                            android:text="@string/bible_verse_label"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/colorPrimary" />
-
-                        <TextView
-                            android:id="@+id/featured_verse_wh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/colorTextEmphasis"
-                            android:textStyle="italic" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            </LinearLayout>
-
-            <!--DIVIDER-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray" />
-
             <!-- WORLD HISTORY CONTENT -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -386,6 +301,94 @@
             </LinearLayout>
             </LinearLayout>
 
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <!-- HIGHLIGHTED VERSE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".10"
+                    android:background="@color/colorTextBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!--TITLES-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/colorTextBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/ic_highlighted_verse"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@mipmap/ic_bible" />
+
+                    </LinearLayout>
+
+                    <!--DYNAMIC VALUES-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight=".9"
+                        android:background="@color/colorTextBackground"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorTextBackground"
+                            android:orientation="vertical"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:text="@string/bible_verse_label"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/featured_verse_wh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorTextEmphasis"
+                                android:textStyle="italic" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
 
             <!-- QUOTATION -->
 
@@ -570,91 +573,6 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
-            <!-- HIGHLIGHTED VERSE -->
-
-            <!-- PRAYER FOCUS -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/colorTextBackground"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="1">
-
-                <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                    android:layout_weight=".10"
-                android:background="@color/colorTextBackground"
-                android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <!--TITLES-->
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                    android:background="@color/colorTextBackground"
-                    android:gravity="center"
-                        android:orientation="vertical">
-
-
-                        <ImageView
-                            android:id="@+id/ic_highlighted_verse_phil"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:src="@mipmap/ic_bible" />
-
-                    </LinearLayout>
-
-                    <!--DYNAMIC VALUES-->
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight=".9"
-                        android:background="@color/colorTextBackground"
-                        android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorTextBackground"
-                        android:orientation="vertical"
-                        android:weightSum="1">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
-                            android:text="@string/bible_verse_label"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/colorPrimary" />
-
-                        <TextView
-                            android:id="@+id/featured_verse_phil"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:textColor="@color/colorTextEmphasis"
-                            android:textStyle="italic" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            </LinearLayout>
-
-            <!--DIVIDER-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray" />
-
             <!-- WORLD HISTORY CONTENT -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -785,6 +703,96 @@
                 </LinearLayout>
             </LinearLayout>
             </LinearLayout>
+
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <!-- HIGHLIGHTED VERSE -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorTextBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".10"
+                    android:background="@color/colorTextBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!--TITLES-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/colorTextBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/ic_highlighted_verse_phil"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@mipmap/ic_bible" />
+
+                    </LinearLayout>
+
+                    <!--DYNAMIC VALUES-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight=".9"
+                        android:background="@color/colorTextBackground"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorTextBackground"
+                            android:orientation="vertical"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:text="@string/bible_verse_label"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorPrimary" />
+
+                            <TextView
+                                android:id="@+id/featured_verse_phil"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@color/colorTextEmphasis"
+                                android:textStyle="italic" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
 
             <!-- QUOTATION -->
 

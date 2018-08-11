@@ -57,13 +57,13 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         viewHolder.glimpseDate = glimpse.glimpseDate;
 
         viewHolder.glimpseDay = view.findViewById(R.id.glimpse_day);
-        viewHolder.glimpseDay.setText(glimpse.glimpseDay);
+        viewHolder.glimpseDay.setText(Common.fromHtml(glimpse.glimpseDay));
 
         viewHolder.headingWorld = view.findViewById(R.id.title_world);
-        viewHolder.headingWorld.setText(glimpse.headingWorld);
+        viewHolder.headingWorld.setText(Common.fromHtml(glimpse.headingWorld));
 
         viewHolder.headingPhil = view.findViewById(R.id.title_phil);
-        viewHolder.headingPhil.setText(glimpse.headingPhil);
+        viewHolder.headingPhil.setText(Common.fromHtml(glimpse.headingPhil));
 
         view.setTag(viewHolder);
         view.setLongClickable(true);
@@ -98,7 +98,7 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
         final AlertDialog dialog = builder.create();
 
         TextView dialogTitle = layout.findViewById(R.id.dialogTitle);
-        dialogTitle.setText(date);
+        dialogTitle.setText(Common.fromHtml(date));
         Common.getGlimpse(date, layout, MainActivity.getAPIInterface());
 
         // close dialog box on click

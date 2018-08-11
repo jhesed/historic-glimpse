@@ -21,15 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        try {
-//            getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-            getActionBar().setIcon(R.drawable.ic_cdhd);
-        }
-        catch(Exception e) {
-            //  TODO
-        }
-
         apiInterface = APIClient.getClient(this).create(APIInterface.class);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
@@ -72,5 +63,15 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_layout, FragmentDaily.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
+
+
+        // Set icon in action bar
+        try {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+            getSupportActionBar().setTitle("Christian Daily Historical Devotion");
+        } catch (Exception e) {
+            // TODO
+        }
     }
 }

@@ -1,5 +1,8 @@
 package com.historicalglimpse.jhesed.historicalglimpse;
 
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -88,15 +91,15 @@ public class Common {
                     String featuredQuoteWh = whData.getFeaturedQuote();
 
                     // Update dynamic content
-                    rHeadingWh.setText(headingWh);
-                    rFeaturedVerseWh.setText(featuredVerseWh);
-                    rContentWh.setText(contentWh);
-                    rPrayerFocusWh.setText(prayerFocusWh);
-                    rFeaturedQuoteWh.setText(featuredQuoteWh);
+                    rHeadingWh.setText(fromHtml(headingWh));
+                    rFeaturedVerseWh.setText(fromHtml(featuredVerseWh));
+                    rContentWh.setText(fromHtml(contentWh));
+                    rPrayerFocusWh.setText(fromHtml(prayerFocusWh));
+                    rFeaturedQuoteWh.setText(fromHtml(featuredQuoteWh));
 
                     if (featuredQuoteWh != null && featuredQuoteWh.trim().equals("") &&
                             featuredQuoteWh.length() != 0) {
-                        rFeaturedQuoteWh.setText(featuredQuoteWh);
+                        rFeaturedQuoteWh.setText(fromHtml(featuredQuoteWh));
                         groupFeaturedQuoteWh.setVisibility(View.VISIBLE);
                     } else {
                         groupFeaturedQuoteWh.setVisibility(GONE);
@@ -117,14 +120,14 @@ public class Common {
                     String featuredQuotePhil = phData.getFeaturedQuote();
 
                     // Update dynamic content
-                    rHeadingPhil.setText(headingPhil);
-                    rFeaturedVersePhil.setText(featuredVersePhil);
-                    rContentPhil.setText(contentPhil);
-                    rPrayerFocusPhil.setText(prayerFocusPhil);
+                    rHeadingPhil.setText(fromHtml(headingPhil));
+                    rFeaturedVersePhil.setText(fromHtml(featuredVersePhil));
+                    rContentPhil.setText(fromHtml(contentPhil));
+                    rPrayerFocusPhil.setText(fromHtml(prayerFocusPhil));
 
                     if (featuredQuotePhil != null && featuredQuotePhil.trim().equals("")
                             && featuredQuotePhil.length() != 0) {
-                        rFeaturedQuotePhil.setText(featuredQuotePhil);
+                        rFeaturedQuotePhil.setText(fromHtml(featuredQuotePhil));
                         groupFeaturedQuotePh.setVisibility(View.VISIBLE);
                     } else {
                         groupFeaturedQuotePh.setVisibility(GONE);
@@ -174,4 +177,12 @@ public class Common {
         return date.substring(date.lastIndexOf("-") + 1, date.length());
     }
 
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String source) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(source, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            return Html.fromHtml(source);
+        }
+    }
 }

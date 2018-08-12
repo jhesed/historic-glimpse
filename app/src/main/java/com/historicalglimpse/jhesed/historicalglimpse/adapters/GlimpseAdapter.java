@@ -53,31 +53,36 @@ public class GlimpseAdapter extends ArrayAdapter<Glimpse> {
             viewHolder = (ViewHolder)view.getTag();
         }
 
-        // Populate the data into the template view using the data object
-        viewHolder.glimpseDate = glimpse.glimpseDate;
+        try {
+            // Populate the data into the template view using the data object
+            viewHolder.glimpseDate = glimpse.glimpseDate;
 
-        viewHolder.glimpseDay = view.findViewById(R.id.glimpse_day);
-        viewHolder.glimpseDay.setText(Common.fromHtml(glimpse.glimpseDay));
+            viewHolder.glimpseDay = view.findViewById(R.id.glimpse_day);
+            viewHolder.glimpseDay.setText(Common.fromHtml(glimpse.glimpseDay));
 
-        viewHolder.headingWorld = view.findViewById(R.id.title_world);
-        viewHolder.headingWorld.setText(Common.fromHtml(glimpse.headingWorld));
+            viewHolder.headingWorld = view.findViewById(R.id.title_world);
+            viewHolder.headingWorld.setText(Common.fromHtml(glimpse.headingWorld));
 
-        viewHolder.headingPhil = view.findViewById(R.id.title_phil);
-        viewHolder.headingPhil.setText(Common.fromHtml(glimpse.headingPhil));
+            viewHolder.headingPhil = view.findViewById(R.id.title_phil);
+            viewHolder.headingPhil.setText(Common.fromHtml(glimpse.headingPhil));
 
-        view.setTag(viewHolder);
-        view.setLongClickable(true);
+            view.setTag(viewHolder);
+            view.setLongClickable(true);
 
-        /* SECTION : Events */
+            /* SECTION : Events */
 
-        view.setOnClickListener(new View.OnClickListener() {
-        // TODO
+            view.setOnClickListener(new View.OnClickListener() {
+                // TODO
 
-            @Override
-            public void onClick(View view) {
-                popUpGlimpseDetails(context, viewHolder.glimpseDate);
-            }
-        });
+                @Override
+                public void onClick(View view) {
+                    popUpGlimpseDetails(context, viewHolder.glimpseDate);
+                }
+            });
+        } catch (Exception exc) {
+            // TODO, error on pagination
+
+        }
         return view;
     }
 

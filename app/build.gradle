@@ -7,8 +7,8 @@ android {
         applicationId "com.historicalglimpse.jhesed.historicalglimpse"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -38,4 +38,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    // glide  (using version 3 for backward compatibility for lower android versions)
+    compile 'com.github.bumptech.glide:glide:3.8.0'
 }

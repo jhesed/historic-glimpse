@@ -1,13 +1,16 @@
 package com.historicalglimpse.jhesed.historicalglimpse;
 
+import android.content.Context;
 import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumDetails;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseDetailsResource;
 
@@ -51,7 +54,7 @@ public class Common {
         final TextView rPrayerFocusWh = view.findViewById(R.id.prayer_focus_wh);
         final TextView rFeaturedQuoteWh = view.findViewById(R.id.featured_quote_wh);
 
-        // Retrieve layout objects (philippinne history)
+        // Retrieve layout objects (philippine history)
         final TextView rHeadingPhil = view.findViewById(R.id.title_phil);
         final TextView rFeaturedVersePhil = view.findViewById(R.id.featured_verse_phil);
         final TextView rContentPhil = view.findViewById(R.id.content_phil);
@@ -60,6 +63,11 @@ public class Common {
 
         final TextView errorMessage = view.findViewById(R.id.error_message);
         errorMessage.setVisibility(GONE);
+
+        // Images
+        final Context context = view.getContext();
+        final ImageView philImage = view.findViewById(R.id.image_phil);
+        final ImageView whImage = view.findViewById(R.id.image_wh);
 
         // Get today's historical glimpse
         Call<GlimpseDetailsResource> call = apiInterface.getGlimpseToday(date);
@@ -132,6 +140,7 @@ public class Common {
                     } else {
                         groupFeaturedQuotePh.setVisibility(GONE);
                     }
+                    Glide.with(context).load("http://goo.gl/gEgYUd").into(philImage);
 
                     rContainerPh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);

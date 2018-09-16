@@ -18,6 +18,8 @@
     <string name="writer_value">Pastor Jose Tacadena</string>
     <string name="contact_info_value">+639324811521</string>
     <string name="developer_email_value">jhesed.tacadena@gmail.com</string>
+    <string name="encoder_label">Encoder:</string>
+    <string name="encoder_value">Diana Capia</string>
     <string name="donate_btc_value">3DK8NFyGUJorowYDxcgkCp22hmKdEfnyS6</string>
     <string name="world_history_label">World History</string>
     <string name="bible_verse_label">Bible Verse</string>

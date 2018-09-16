@@ -102,13 +102,19 @@
                     android:text="@string/writer_label"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/colorTextEmphasis" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/contact_info_label"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/colorTextEmphasis"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/encoder_label"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -146,6 +152,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/contact_info_value"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/encoder_value"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
                 <TextView
                     android:layout_width="wrap_content"

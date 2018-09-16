@@ -36,6 +36,58 @@
             android:gravity="center_vertical|fill_vertical"
             android:orientation="vertical">
 
+            <!-- DATE TITLE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorButton1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!--TITLES-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/colorTextBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <!--DYNAMIC VALUES-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/title_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorTextEmphasis"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

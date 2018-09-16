@@ -49,7 +49,7 @@ public class APIClient {
         Cache cache = null;
         try {
             cache = new Cache(new File(context.getCacheDir(), "http-cache"),
-                    30 * 1024 * 1024); // 30 MB
+                    100 * 1024 * 1024); // 100 MB
         } catch (Exception e) {
 //            Timer.e( e, "Could not create Cache!" );
         }
@@ -64,7 +64,7 @@ public class APIClient {
 
                 // re-write response header to force use of cache
                 CacheControl cacheControl = new CacheControl.Builder()
-                        .maxAge(24, TimeUnit.HOURS)
+                        .maxAge(3, TimeUnit.MINUTES)
                         .build();
 
                 return response.newBuilder()

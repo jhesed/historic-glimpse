@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.DatumDetails;
 import com.historicalglimpse.jhesed.historicalglimpse.pojo.GlimpseDetailsResource;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -61,6 +62,13 @@ public class Common {
         final TextView errorMessage = view.findViewById(R.id.error_message);
         errorMessage.setVisibility(GONE);
 
+        // date title
+        final TextView dateTitle = view.findViewById(R.id.title_date);
+        if (dateTitle != null) {
+            String humanDate = dateToHuman(date);
+            dateTitle.setText(humanDate);
+        }
+
         // Get today's historical glimpse
         Call<GlimpseDetailsResource> call = apiInterface.getGlimpseToday(date);
 
@@ -97,7 +105,7 @@ public class Common {
                     rPrayerFocusWh.setText(fromHtml(prayerFocusWh));
                     rFeaturedQuoteWh.setText(fromHtml(featuredQuoteWh));
 
-                    if (featuredQuoteWh != null && featuredQuoteWh.trim().equals("") &&
+                    if (featuredQuoteWh != null && !featuredQuoteWh.trim().equals("") &&
                             featuredQuoteWh.length() != 0) {
                         rFeaturedQuoteWh.setText(fromHtml(featuredQuoteWh));
                         groupFeaturedQuoteWh.setVisibility(View.VISIBLE);
@@ -125,7 +133,7 @@ public class Common {
                     rContentPhil.setText(fromHtml(contentPhil));
                     rPrayerFocusPhil.setText(fromHtml(prayerFocusPhil));
 
-                    if (featuredQuotePhil != null && featuredQuotePhil.trim().equals("")
+                    if (featuredQuotePhil != null && !featuredQuotePhil.trim().equals("")
                             && featuredQuotePhil.length() != 0) {
                         rFeaturedQuotePhil.setText(fromHtml(featuredQuotePhil));
                         groupFeaturedQuotePh.setVisibility(View.VISIBLE);
@@ -184,5 +192,21 @@ public class Common {
         } else {
             return Html.fromHtml(source);
         }
+    }
+
+    public static String dateToHuman(String date) {
+
+        String stringDate = "";
+        try {
+            // obtain date and time from initial string
+            Date dateFormatted = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+            // set date string
+            stringDate = new SimpleDateFormat("MMMM dd").format(dateFormatted);
+            // set time string
+        } catch (ParseException e) {
+            // wrong input
+        }
+        return stringDate;
+
     }
 }

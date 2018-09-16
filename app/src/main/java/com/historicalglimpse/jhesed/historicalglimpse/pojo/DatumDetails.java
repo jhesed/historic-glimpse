@@ -35,6 +35,9 @@ public class DatumDetails {
     @SerializedName("created_at")
     @Expose
     private Object createdAt;
+    @SerializedName("image_link")
+    @Expose
+    private String imageLink;
 
     public String getId() {
         return id;
@@ -116,4 +119,11 @@ public class DatumDetails {
         this.createdAt = createdAt;
     }
 
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
 }

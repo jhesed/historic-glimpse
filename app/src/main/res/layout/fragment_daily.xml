@@ -185,10 +185,12 @@
             <!-- Image -->
             <ImageView
                 android:id="@+id/image_wh"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
 
             <!--DIVIDER-->
             <View
@@ -601,10 +603,12 @@
             <!-- Image -->
             <ImageView
                 android:id="@+id/image_phil"
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/ic_launcher" />
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
 
             <!--DIVIDER-->
             <View

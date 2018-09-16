@@ -170,6 +170,21 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
+            <ImageView
+                android:id="@+id/image_wh"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
+
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
             <!-- WORLD HISTORY CONTENT -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -566,6 +581,21 @@
                 </LinearLayout>
             </LinearLayout>
             </LinearLayout>
+
+            <!--DIVIDER-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <ImageView
+                android:id="@+id/image_phil"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
 
             <!--DIVIDER-->
             <View

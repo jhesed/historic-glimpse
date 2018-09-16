@@ -105,6 +105,7 @@ public class Common {
                     String contentWh = whData.getContent();
                     String prayerFocusWh = whData.getPrayerFocus();
                     String featuredQuoteWh = whData.getFeaturedQuote();
+                    String imageLinkWh = whData.getImageLink();
 
                     // Update dynamic content
                     rHeadingWh.setText(fromHtml(headingWh));
@@ -121,6 +122,19 @@ public class Common {
                         groupFeaturedQuoteWh.setVisibility(GONE);
                     }
 
+                    if (imageLinkWh != null) {
+                        try {
+                            Glide.with(context).load(imageLinkWh)
+                                    .fitCenter()
+                                    .placeholder(R.drawable.placeholder)
+                                    .into(whImage);
+                            whImage.setVisibility(View.VISIBLE);
+                        } catch (Exception e) {
+                            // Pass, i.e. error loading image
+                            whImage.setVisibility(View.GONE);
+                        }
+                    }
+
                     rContainerWh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);
                     errorMessage.setVisibility(View.GONE);
@@ -134,6 +148,7 @@ public class Common {
                     String contentPhil = phData.getContent();
                     String prayerFocusPhil = phData.getPrayerFocus();
                     String featuredQuotePhil = phData.getFeaturedQuote();
+                    String imageLinkPhil = phData.getImageLink();
 
                     // Update dynamic content
                     rHeadingPhil.setText(fromHtml(headingPhil));
@@ -148,8 +163,18 @@ public class Common {
                     } else {
                         groupFeaturedQuotePh.setVisibility(GONE);
                     }
-                    Glide.with(context).load("http://goo.gl/gEgYUd").into(philImage);
-
+                    if (imageLinkPhil != null) {
+                        try {
+                            Glide.with(context).load(imageLinkPhil)
+                                    .fitCenter()
+                                    .placeholder(R.drawable.placeholder)
+                                    .into(philImage);
+                            philImage.setVisibility(View.VISIBLE);
+                        } catch (Exception e) {
+                            // Error loading image
+                            philImage.setVisibility(View.GONE);
+                        }
+                    }
                     rContainerPh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);
                     errorMessage.setVisibility(View.GONE);

@@ -108,6 +108,35 @@
 
             </LinearLayout>
 
+            <!-- GENERIC QUOTE -->
+            <LinearLayout
+                android:id="@+id/group_generic_quote_wh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/generic_quote_wh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
             <!-- WORLD HISTORY TITLE -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -492,6 +521,36 @@
                     android:src="@drawable/dotted" />
 
             </LinearLayout>
+
+            <!-- REFERENCES -->
+            <LinearLayout
+                android:id="@+id/group_reference_wh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/references_wh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <!-- ............................................................................... -->
@@ -526,6 +585,36 @@
                     android:textColor="@color/colorTextBackground" />
 
             </LinearLayout>
+
+            <!-- GENERIC QUOTE -->
+            <LinearLayout
+                android:id="@+id/group_generic_quote_ph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/generic_quote_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -909,6 +998,36 @@
                     android:layerType="software"
                     android:src="@drawable/dotted" />
             </LinearLayout>
+
+            <!-- REFERENCES -->
+            <LinearLayout
+                android:id="@+id/group_reference_ph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/references_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <!-- ............................................................................... -->

@@ -47,6 +47,10 @@ public class Common {
         rContainerPh.setVisibility(GONE);
         final LinearLayout groupFeaturedQuoteWh = view.findViewById(R.id.group_featured_quote_wh);
         final LinearLayout groupFeaturedQuotePh = view.findViewById(R.id.group_featured_quote_ph);
+        final LinearLayout groupGenericQuoteWh = view.findViewById(R.id.group_generic_quote_wh);
+        final LinearLayout groupGenericQuotePh = view.findViewById(R.id.group_generic_quote_ph);
+        final LinearLayout groupReferenceWh = view.findViewById(R.id.group_reference_wh);
+        final LinearLayout groupReferencePh = view.findViewById(R.id.group_reference_ph);
 
         // Retrieve layout objects (world history)
         final TextView rHeadingWh = view.findViewById(R.id.title_wh);
@@ -54,6 +58,8 @@ public class Common {
         final TextView rContentWh = view.findViewById(R.id.content_wh);
         final TextView rPrayerFocusWh = view.findViewById(R.id.prayer_focus_wh);
         final TextView rFeaturedQuoteWh = view.findViewById(R.id.featured_quote_wh);
+        final TextView rGenericQuoteWh = view.findViewById(R.id.generic_quote_wh);
+        final TextView rReferenceWh = view.findViewById(R.id.references_wh);
 
         // Retrieve layout objects (philippine history)
         final TextView rHeadingPhil = view.findViewById(R.id.title_phil);
@@ -61,6 +67,8 @@ public class Common {
         final TextView rContentPhil = view.findViewById(R.id.content_phil);
         final TextView rPrayerFocusPhil = view.findViewById(R.id.prayer_focus_phil);
         final TextView rFeaturedQuotePhil = view.findViewById(R.id.featured_quote_phil);
+        final TextView rGenericQuotePhil = view.findViewById(R.id.generic_quote_ph);
+        final TextView rReferencePhil = view.findViewById(R.id.references_ph);
 
         final TextView errorMessage = view.findViewById(R.id.error_message);
         errorMessage.setVisibility(GONE);
@@ -105,7 +113,10 @@ public class Common {
                     String contentWh = whData.getContent();
                     String prayerFocusWh = whData.getPrayerFocus();
                     String featuredQuoteWh = whData.getFeaturedQuote();
+                    String genericQuoteWh = whData.getGenericQuote();
                     String imageLinkWh = whData.getImageLink();
+                    String referenceWh = whData.getReference();
+
 
                     // Update dynamic content
                     rHeadingWh.setText(fromHtml(headingWh));
@@ -135,6 +146,15 @@ public class Common {
                         }
                     }
 
+                    if (genericQuoteWh != null) {
+                        rGenericQuoteWh.setText(fromHtml(genericQuoteWh));
+                        groupGenericQuoteWh.setVisibility(View.VISIBLE);
+                    }
+                    if (referenceWh != null) {
+                        rReferenceWh.setText(fromHtml(referenceWh));
+                        groupReferenceWh.setVisibility(View.VISIBLE);
+                    }
+
                     rContainerWh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);
                     errorMessage.setVisibility(View.GONE);
@@ -149,6 +169,8 @@ public class Common {
                     String prayerFocusPhil = phData.getPrayerFocus();
                     String featuredQuotePhil = phData.getFeaturedQuote();
                     String imageLinkPhil = phData.getImageLink();
+                    String genericQuotePhil = phData.getGenericQuote();
+                    String referencePhil = phData.getReference();
 
                     // Update dynamic content
                     rHeadingPhil.setText(fromHtml(headingPhil));
@@ -175,6 +197,16 @@ public class Common {
                             philImage.setVisibility(View.GONE);
                         }
                     }
+
+                    if (genericQuotePhil != null) {
+                        rGenericQuotePhil.setText(fromHtml(genericQuotePhil));
+                        groupGenericQuotePh.setVisibility(View.VISIBLE);
+                    }
+                    if (referencePhil != null) {
+                        rReferencePhil.setText(fromHtml(referencePhil));
+                        groupReferencePh.setVisibility(View.VISIBLE);
+                    }
+
                     rContainerPh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);
                     errorMessage.setVisibility(View.GONE);

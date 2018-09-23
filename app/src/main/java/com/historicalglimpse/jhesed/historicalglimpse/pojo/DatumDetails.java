@@ -38,6 +38,12 @@ public class DatumDetails {
     @SerializedName("image_link")
     @Expose
     private String imageLink;
+    @SerializedName("generic_quote")
+    @Expose
+    private String genericQuote;
+    @SerializedName("reference")
+    @Expose
+    private String reference;
 
     public String getId() {
         return id;
@@ -125,5 +131,13 @@ public class DatumDetails {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public String getGenericQuote() {
+        return genericQuote;
+    }
+
+    public String getReference() {
+        return reference;
     }
 }

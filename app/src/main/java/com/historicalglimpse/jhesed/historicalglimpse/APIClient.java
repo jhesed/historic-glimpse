@@ -29,7 +29,6 @@ public class APIClient {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://jsoscc.com")
-//                .baseUrl("http://192.168.1.3/cms-glimpse/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(provideOkHttpClient(context))
                 .build();

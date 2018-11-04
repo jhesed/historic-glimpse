@@ -44,6 +44,9 @@ public class DatumDetails {
     @SerializedName("reference")
     @Expose
     private String reference;
+    @SerializedName("middle_quote")
+    @Expose
+    private String middleQuote;
 
     public String getId() {
         return id;
@@ -140,4 +143,9 @@ public class DatumDetails {
     public String getReference() {
         return reference;
     }
+
+    public String getMiddleQuote() {
+        return middleQuote;
+    }
+
 }

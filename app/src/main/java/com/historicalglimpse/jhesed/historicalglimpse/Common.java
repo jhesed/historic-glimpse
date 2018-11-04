@@ -51,6 +51,9 @@ public class Common {
         final LinearLayout groupGenericQuotePh = view.findViewById(R.id.group_generic_quote_ph);
         final LinearLayout groupReferenceWh = view.findViewById(R.id.group_reference_wh);
         final LinearLayout groupReferencePh = view.findViewById(R.id.group_reference_ph);
+        final LinearLayout groupMiddleQuoteWh = view.findViewById(R.id.group_middle_quote_wh);
+        final LinearLayout groupMiddleQuotePh = view.findViewById(R.id.group_middle_quote_ph);
+
 
         // Retrieve layout objects (world history)
         final TextView rHeadingWh = view.findViewById(R.id.title_wh);
@@ -59,6 +62,8 @@ public class Common {
         final TextView rPrayerFocusWh = view.findViewById(R.id.prayer_focus_wh);
         final TextView rFeaturedQuoteWh = view.findViewById(R.id.featured_quote_wh);
         final TextView rGenericQuoteWh = view.findViewById(R.id.generic_quote_wh);
+        final TextView rMiddleQuoteWh = view.findViewById(R.id.middle_quote_wh);
+
         final TextView rReferenceWh = view.findViewById(R.id.references_wh);
 
         // Retrieve layout objects (philippine history)
@@ -69,6 +74,7 @@ public class Common {
         final TextView rFeaturedQuotePhil = view.findViewById(R.id.featured_quote_phil);
         final TextView rGenericQuotePhil = view.findViewById(R.id.generic_quote_ph);
         final TextView rReferencePhil = view.findViewById(R.id.references_ph);
+        final TextView rMiddleQuotePhil = view.findViewById(R.id.middle_quote_ph);
 
         final TextView errorMessage = view.findViewById(R.id.error_message);
         errorMessage.setVisibility(GONE);
@@ -116,6 +122,7 @@ public class Common {
                     String genericQuoteWh = whData.getGenericQuote();
                     String imageLinkWh = whData.getImageLink();
                     String referenceWh = whData.getReference();
+                    String middleQuoteWh = whData.getMiddleQuote();
 
 
                     // Update dynamic content
@@ -154,6 +161,10 @@ public class Common {
                         rReferenceWh.setText(fromHtml(referenceWh));
                         groupReferenceWh.setVisibility(View.VISIBLE);
                     }
+                    if (middleQuoteWh != null) {
+                        rMiddleQuoteWh.setText(fromHtml(middleQuoteWh));
+                        groupMiddleQuoteWh.setVisibility(View.VISIBLE);
+                    }
 
                     rContainerWh.setVisibility(View.VISIBLE);
 //                    rShareButton.setVisibility(View.VISIBLE);
@@ -171,6 +182,7 @@ public class Common {
                     String imageLinkPhil = phData.getImageLink();
                     String genericQuotePhil = phData.getGenericQuote();
                     String referencePhil = phData.getReference();
+                    String middleQuotePhil = phData.getMiddleQuote();
 
                     // Update dynamic content
                     rHeadingPhil.setText(fromHtml(headingPhil));
@@ -205,6 +217,10 @@ public class Common {
                     if (referencePhil != null) {
                         rReferencePhil.setText(fromHtml(referencePhil));
                         groupReferencePh.setVisibility(View.VISIBLE);
+                    }
+                    if (middleQuotePhil != null) {
+                        rMiddleQuotePhil.setText(fromHtml(middleQuotePhil));
+                        groupMiddleQuotePh.setVisibility(View.VISIBLE);
                     }
 
                     rContainerPh.setVisibility(View.VISIBLE);

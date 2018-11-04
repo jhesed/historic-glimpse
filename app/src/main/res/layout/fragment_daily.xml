@@ -282,6 +282,35 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
+            <!-- MIDDLE QUOTE -->
+            <LinearLayout
+                android:id="@+id/group_middle_quote_wh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/middle_quote_wh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+
             <!-- PRAYER FOCUS -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -705,7 +734,7 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
 
-            <!-- WORLD HISTORY CONTENT -->
+            <!-- PHILIPPINE HISTORY CONTENT -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -759,6 +788,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray" />
+
+            <!-- MIDDLE QUOTE -->
+            <LinearLayout
+                android:id="@+id/group_middle_quote_ph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTextBackground"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/middle_quote_ph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTextEmphasis"
+                    android:textStyle="italic" />
+
+                <!--DIVIDER-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
 
             <!-- PRAYER FOCUS -->
             <LinearLayout

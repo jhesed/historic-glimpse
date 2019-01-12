@@ -44,6 +44,9 @@ public class DatumDetails {
     @SerializedName("reference")
     @Expose
     private String reference;
+    @SerializedName("transition")
+    @Expose
+    private String transition;
 
     public String getId() {
         return id;
@@ -140,4 +143,13 @@ public class DatumDetails {
     public String getReference() {
         return reference;
     }
+
+    public String getTransition() {
+        return transition;
+    }
+
+    public void setTransition(String transition) {
+        this.transition = transition;
+    }
+
 }

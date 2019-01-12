@@ -26,4 +26,5 @@
     <string name="philippine_history_label">Philippine History</string>
     <string name="prayer_focus_label">Prayer Focus</string>
     <string name="connection_error">Unable to connect to server</string>
+    <string name="developers">jhesed.tacadena@gmail.com and joannamarieochoada@gmail.com</string>
 </resources>

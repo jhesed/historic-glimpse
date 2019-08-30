@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CDHD</string>
     <string name="app_title">Christian Daily Historical Devotion</string>
-    <string name="title_today">Today</string>
+    <string name="title_today">Recent</string>
     <string name="title_month">This Month</string>
     <string name="title_about">About</string>
     <string name="about1">Christian Daily Historical Devotion (CDHD) is a daily glimpse of particular events or historical personalities in both the Philippines and world history; and appropriate Bible verses to provide practical challenge and applications.</string>
@@ -25,6 +25,6 @@
     <string name="bible_verse_label">Bible Verse</string>
     <string name="philippine_history_label">Philippine History</string>
     <string name="prayer_focus_label">Prayer Focus</string>
-    <string name="connection_error">Unable to connect to server</string>
-    <string name="developers">jhesed.tacadena@gmail.com and joannamarieochoada@gmail.com</string>
+    <string name="connection_error">No data available yet. Be a volunteer.</string>
+    <string name="developers">jhesed.tacadena@gmail.com</string>
 </resources>

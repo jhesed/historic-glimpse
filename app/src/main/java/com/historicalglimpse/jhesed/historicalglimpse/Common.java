@@ -96,8 +96,13 @@ public class Common {
                                    Response<GlimpseDetailsResource> response) {
 
                 GlimpseDetailsResource resource = response.body();
-
-                List<DatumDetails> data = resource.getData();
+                List<DatumDetails> data;
+                try {
+                    data = resource.getData();
+                }
+                catch(Exception e) {
+                    data = null;
+                }
                 DatumDetails whData = null;
                 DatumDetails phData = null;
                 if (data != null) {

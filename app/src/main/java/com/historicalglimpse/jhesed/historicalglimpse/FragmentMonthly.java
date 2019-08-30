@@ -70,19 +70,33 @@ public class FragmentMonthly extends Fragment {
                                    Response<GlimpseListResource> response) {
 
                 GlimpseListResource resource = response.body();
-                List<DatumList> data = resource.getData();
+
+                List<DatumList> data;
+                try {
+                    data = resource.getData();
+                }
+                catch(Exception e) {
+                    data = null;
+                }
 
                 progressBar.setVisibility(GONE);
 
-                // Map response to Glimpse model object
                 ArrayList<Glimpse> glimpseListData = new ArrayList<>();
-                for (int i = 0; i < data.size(); i++) {
+                if(data != null) {
+                    // Map response to Glimpse model object
+                    for (int i = 0; i < data.size(); i++) {
 
-                    glimpseListData.add(new Glimpse(
-                            getDayAsString(data.get(i).getGlimpseDate()),
-                            data.get(i).getGlimpseDate(),
-                            data.get(i).getHeadingWorld(),
-                            data.get(i).getHeadingPhil()));
+                        glimpseListData.add(new Glimpse(
+                                getDayAsString(data.get(i).getGlimpseDate()),
+                                data.get(i).getGlimpseDate(),
+                                data.get(i).getHeadingWorld(),
+                                data.get(i).getHeadingPhil()));
+                    }
+                    // Hide error message and progress bar
+                    errorMessage.setVisibility(GONE);
+                }
+                else{
+                    errorMessage.setVisibility(View.VISIBLE);
                 }
 
                 if (glimpseAdapter == null) {
@@ -91,11 +105,6 @@ public class FragmentMonthly extends Fragment {
                     glimpseAdapter = new GlimpseAdapter(context, glimpseListData);
                     glimpseListView.setAdapter(glimpseAdapter);
                 }
-                glimpseListView.setAdapter(glimpseAdapter);
-
-                // Hide error message and progress bar
-                errorMessage.setVisibility(GONE);
-                progressBar.setVisibility(GONE);
             }
 
             @Override
